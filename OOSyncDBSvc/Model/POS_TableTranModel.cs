@@ -9,7 +9,7 @@ namespace OOSyncDBSvc.Model
     class POS_TableTranModel
     {
         public int Id { get; set; }
-        public string ParentTranId { get; set; }
+        public int ParentTranId { get; set; }
         public string TranType { get; set; }
         public int ProductId { get; set; }
         public string ProductName { get; set; }
@@ -69,7 +69,7 @@ namespace OOSyncDBSvc.Model
         public string OrderPasswordCode { get; set; }
         public string OrderPasswordName { get; set; }
         public string OrderStation { get; set; }
-        public int IsCancelled { get; set; }
+        public bool IsCancelled { get; set; }
         public string CancelDate { get; set; }
         public string CancelTime { get; set; }
         public bool IsCancelPending { get; set; }
@@ -101,6 +101,7 @@ namespace OOSyncDBSvc.Model
         public int SplitTranId { get; set; }
         public int SplitTranItemId { get; set; }
         public int SplitTranItemSplitId { get; set; }
-
+        public bool IsPrinter6 { get; set; }
+        public int Printer6Qty { get; set; }
     }
 }

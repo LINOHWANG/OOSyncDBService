@@ -15,7 +15,7 @@ namespace OOSyncDBSvc.Model
         public string SiteGSTNumber { get; set; }
         public DateTime SiteCreatedDTTM { get; set; }
         public bool IsSiteLive { get; set; }
-        public string MainSiteCode { get; set; }
+        //public string MainSiteCode { get; set; }
 
         //public string Site_Biz_Hour_Start { get; set; }
         //public string Site_Biz_Hour_Finish { get; set; }

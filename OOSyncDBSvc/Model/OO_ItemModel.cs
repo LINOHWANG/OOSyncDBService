@@ -37,5 +37,6 @@ namespace OOSyncDBSvc.Model
         public float Tax2 { get; set; }
         public float Tax3 { get; set; }
         public string Comment { get; set; }
+        public int ParentId { get; set; }
     }
 }

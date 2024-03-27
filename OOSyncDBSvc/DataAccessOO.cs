@@ -254,7 +254,15 @@ namespace OOSyncDBSvc
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("OODB")))
             {
-                var output = connection.Query<OO_ItemModel>($"select * from OOTranItems where TransactionId = '{iTranID.ToString()}' and SiteCode='{strSiteCode}' ").ToList();
+                var output = connection.Query<OO_ItemModel>($"select * from OOTranItems where Parentid = 0 and TransactionId = {iTranID} and SiteCode='{strSiteCode}' ").ToList();
+                return output;
+            }
+        }
+        public List<OO_ItemModel> Get_ChildTranItems_by_TranID(string strSiteCode, int iParentTranID)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("OODB")))
+            {
+                var output = connection.Query<OO_ItemModel>($"select * from OOTranItems where Parentid = {iParentTranID} and SiteCode='{strSiteCode}' ").ToList();
                 return output;
             }
         }

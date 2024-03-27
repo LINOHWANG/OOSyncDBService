@@ -30,5 +30,10 @@ namespace OOSyncDBSvc.Model
         public float TotalDue { get; set; }
         public float TotalPaid { get; set; }
         public int IsPOSUpdated { get; set; }
+
+        public string PayType { get; set; }
+        public string DateTimePOSUpdate { get; set; }
+        public bool IsCheckOut { get; set; }
+        public string DateTimeCheckOut { get; set; }
     }
 }

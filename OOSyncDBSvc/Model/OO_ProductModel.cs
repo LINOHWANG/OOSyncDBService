@@ -9,8 +9,8 @@ namespace OOSyncDBSvc.Model
     class OO_ProductModel
     {
         public int Id { get; set; }
-        public string SiteCode { get; set; }
         public int PosProdId { get; set; }
+        public string SiteCode { get; set; }
         public string ProductName { get; set; }
         public string SecondName { get; set; }
         public int ProductTypeId { get; set; }

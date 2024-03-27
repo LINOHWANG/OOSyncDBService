@@ -11,6 +11,7 @@ namespace OOSyncDBSvc
 {
     class DataAccessPOS1
     {
+        Utilities util = new Utilities();
         public List<POS1_InvNoModel> Get_InvNo()
         {
             ////////////////////////////////////////////////////
@@ -29,6 +30,26 @@ namespace OOSyncDBSvc
                 string query = "UPDATE mfInvNo SET InvNo=" + iNewInvNo.ToString() + ", InvDate=GETDATE()";
                 var count = connection.Execute(query);
                 return count;
+            }
+        }
+
+        internal bool Check_Online_DuplicateOrder(int iOnlineOrderid)
+        {
+            using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.CnnVal("POS1")))
+            {
+                string query = $"select tableid from PhoneTranComplete where CreatePasswordName = '{iOnlineOrderid}'";
+
+                int result = connection.ExecuteScalar<int>(query);
+                if (result > 0)
+                {
+                    util.Logger("Found Online_DuplicateOrder on PhoneTranComplete = " + query + " : tabldid = " + result.ToString());
+                    return true;
+                }
+                else
+                {
+                    // normal as new order
+                    return false;
+                }
             }
         }
     }

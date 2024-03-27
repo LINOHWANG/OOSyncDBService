@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30309.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OOSyncDBSvc", "OOSyncDBSvc\OOSyncDBSvc.csproj", "{BEADD664-FDAA-422C-B8B8-8EA84CF67AFC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BEADD664-FDAA-422C-B8B8-8EA84CF67AFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEADD664-FDAA-422C-B8B8-8EA84CF67AFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEADD664-FDAA-422C-B8B8-8EA84CF67AFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEADD664-FDAA-422C-B8B8-8EA84CF67AFC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DA48063F-8844-402B-B53D-5B12E8B328E2}
+	EndGlobalSection
+EndGlobal

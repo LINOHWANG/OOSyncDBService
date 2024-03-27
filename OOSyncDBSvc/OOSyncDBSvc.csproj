@@ -9,9 +9,26 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>OOSyncDBSvc</RootNamespace>
     <AssemblyName>OOSyncDBSvc</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <PublishUrl>C:\OOSyncDBSvc\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>14</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -35,16 +52,35 @@
   <PropertyGroup>
     <StartupObject>OOSyncDBSvc.Program</StartupObject>
   </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>8A5516B226B9380C2FE8EF3F7A613CC7484856E1</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>OOSyncDBSvc_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>false</SignManifests>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Dapper, Version=1.60.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Dapper.1.60.6\lib\net451\Dapper.dll</HintPath>
       <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
     <Reference Include="System.Management" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -59,6 +95,18 @@
     <Compile Include="DataAccessPOS.cs" />
     <Compile Include="DataAccessPOS1.cs" />
     <Compile Include="Helper.cs" />
+    <Compile Include="Model\GFO_CollectionsModel.cs" />
+    <Compile Include="Model\GFO_ItemOptionsModel.cs" />
+    <Compile Include="Model\GFO_OrderItemsModel.cs" />
+    <Compile Include="Model\GFO_OrdersModel.cs" />
+    <Compile Include="Model\GFO_TaxesModel.cs" />
+    <Compile Include="Model\GF_CategoriesModel.cs" />
+    <Compile Include="Model\GF_ItemsModel.cs" />
+    <Compile Include="Model\GF_MenusModel.cs" />
+    <Compile Include="Model\GF_OptionGroupsModel.cs" />
+    <Compile Include="Model\GF_OptionsModel.cs" />
+    <Compile Include="Model\GF_SizesModel.cs" />
+    <Compile Include="Model\GF_TagsModel.cs" />
     <Compile Include="Model\OO_ChildGroupModel.cs" />
     <Compile Include="Model\OO_ChildProdModel.cs" />
     <Compile Include="Model\OO_CustomerModel.cs" />
@@ -74,13 +122,17 @@
     <Compile Include="Model\POS_ChildGroupModel.cs" />
     <Compile Include="Model\POS_ChildProdModel.cs" />
     <Compile Include="Model\POS_CustomerModel.cs" />
+    <Compile Include="Model\POS_GF_MenuItemsModel.cs" />
     <Compile Include="Model\POS_OnlineOrderModel.cs" />
     <Compile Include="Model\POS_OO_Prod_SyncModel.cs" />
     <Compile Include="Model\POS_PassWordModel.cs" />
     <Compile Include="Model\POS_ProductDetailModel.cs" />
     <Compile Include="Model\POS_ProductModel.cs" />
     <Compile Include="Model\POS_ProductTypeModel.cs" />
+    <Compile Include="Model\POS_ReservationModel.cs" />
+    <Compile Include="Model\POS_SeqNoModel.cs" />
     <Compile Include="Model\POS_SysConfigModel.cs" />
+    <Compile Include="Model\POS_TableLayoutModel.cs" />
     <Compile Include="Model\POS_TableTranModel.cs" />
     <Compile Include="Model\POS_TaxModel.cs" />
     <Compile Include="OOSyncDBSvc.cs">
@@ -101,6 +153,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="OOSyncDBSvc_TemporaryKey.pfx" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -110,6 +163,18 @@
     <EmbeddedResource Include="ProjectInstaller.resx">
       <DependentUpon>ProjectInstaller.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

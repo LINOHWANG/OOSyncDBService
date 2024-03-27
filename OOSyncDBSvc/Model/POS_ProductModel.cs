@@ -12,9 +12,12 @@ namespace OOSyncDBSvc.Model
         public string ProductName { get; set; }
         public string SecondName { get; set; }
         public int ProductTypeId { get; set; }
+        public int SupplierId { get; set; }
         public bool IsSubItem { get; set; }
+        public bool IsManualItem { get; set; }
         public float InUnitPrice { get; set; }
         public float OutUnitPrice { get; set; }
+        public float Balance { get; set; }
         public bool IsTax1 { get; set; }
         public bool IsTax2 { get; set; }
         public bool IsTax3 { get; set; }
@@ -44,6 +47,13 @@ namespace OOSyncDBSvc.Model
         public bool IsOnline { get; set; }
         // 20200804
         public bool IsOOUpdated { get; set; }
+        //20210427
+        public float DelSvc1Price { get; set; }
+        public float DelSvc2Price { get; set; }
+        public float DelSvc3Price { get; set; }
+        public string TaxCode { get; set; }
+        public float DelSvc4Price { get; set; }
+        public bool IsPrinter6 { get; set; }
 
     }
 }
